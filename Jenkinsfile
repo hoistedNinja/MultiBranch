@@ -8,7 +8,10 @@ pipeline {
     stage('Hello'){
       steps {
         echo "hello"
-        pwd
+        sh '''
+          pwd
+          ls
+        '''
       }
     }
   }
