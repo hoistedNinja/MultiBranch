@@ -13,9 +13,7 @@ pipeline {
         sh '''
           pwd
           ls
-          mkdir newFolder
-          ls
-          mkdir jenikinsTest
+          mkdir -p testingJenkins
           ls
         '''
       }
