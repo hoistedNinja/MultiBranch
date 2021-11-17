@@ -7,16 +7,53 @@ pipeline {
     disableConcurrentBuilds()
   }
   stages{
-    stage('Hello'){
+    stage('main'){
+      when {
+          branch "main"
+        }
       steps {
-        echo "hello"
-        sh '''
-          pwd
-          ls
-          mkdir -p testingJenkins
-          ls
-        '''
+        echo "Buildiing containers .."
+        echo " Testing Containers .."
       }
     }
+    stage('development'){
+      when {
+          branch "development"
+        }
+      steps {
+        echo "Testing containers  .."
+        echo "Tesing containers .."
+        echo " deploy containers .."
+        
+      }
+    }
+    stage('OM Branch'){
+      when {
+          branch "OM-*"
+        }
+      steps {
+        echo "Testing containers  .."
+        echo "Tesing containers .."
+        
+        
+      }
+    }
+    stage('OM Branch-pull request'){
+      when {
+        anyOf {
+          changeRequest target: 'master'
+          changeRequest target: 'main'
+        }
+      }
+      steps {
+        echo "Testing containers  .."
+        echo "Tesing containers .."
+        echo " new branch tested"
+        echo "testing pull request triggered successful"
+        
+        
+      }
+    }
+
   }
 }
