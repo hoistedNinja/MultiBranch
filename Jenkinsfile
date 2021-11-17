@@ -35,6 +35,7 @@ pipeline {
         echo "Testing containers  .."
         echo "Tesing containers .."
         echo " we are in OM branch .."
+        echo " Checking Jenkins .."
         
         
       }
