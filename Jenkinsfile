@@ -1,6 +1,6 @@
 pipeline {
   agent { 
-    docker { image 'node:14-alpine'}
+    label "master"
   }
   options {
     buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
@@ -11,7 +11,8 @@ pipeline {
       steps {
         echo "hello"
         sh '''
-          node --version
+          pwd
+          ls
         '''
       }
     }
