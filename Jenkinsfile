@@ -15,6 +15,8 @@ pipeline {
           ls
           mkdir newFolder
           ls
+          mkdir jenikinsTest
+          ls
         '''
       }
     }
