@@ -49,7 +49,6 @@ pipeline {
         echo "Testing containers  .."
         echo "Tesing containers .."
         echo " new branch tested"
-        echo "testing pull request triggered successful"
         
         
       }
