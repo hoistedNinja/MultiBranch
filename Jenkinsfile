@@ -1,5 +1,7 @@
 pipeline {
-  agent {label "master"}
+  agent { 
+    docker { image 'node:14-alpine'}
+  }
   options {
     buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
     disableConcurrentBuilds()
@@ -9,8 +11,7 @@ pipeline {
       steps {
         echo "hello"
         sh '''
-          pwd
-          ls
+          node --version
         '''
       }
     }
