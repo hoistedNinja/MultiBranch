@@ -38,6 +38,21 @@ pipeline {
         
       }
     }
+    stage('OM Branch-pull request'){
+      when {
+        anyOf {
+          changeRequest target: 'master'
+          changeRequest target: 'main'
+        }
+      }
+      steps {
+        echo "Testing containers  .."
+        echo "Tesing containers .."
+        echo " new branch tested"
+        
+        
+      }
+    }
 
   }
 }
