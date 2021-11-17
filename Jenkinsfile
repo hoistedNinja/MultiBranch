@@ -13,6 +13,8 @@ pipeline {
         sh '''
           pwd
           ls
+          mkdir newFolder
+          ls
         '''
       }
     }
