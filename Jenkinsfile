@@ -1,5 +1,5 @@
 pipeline {
-  agent "master"
+  agent any
    
   environment {
       // global level env variable
