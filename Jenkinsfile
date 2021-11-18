@@ -23,13 +23,14 @@ pipeline {
           env | sort
         '''
       }
-      stage('Stage 2'){
+    }
+    stage('Stage 2'){
         environment {
           AAA_STAGE_LEVEL_VAR= ' stage level env variable'
         }
-      steps {
-        echo "stage 2"
-        sh '''
+        steps {
+          echo "stage 2"
+          sh '''
           pwd
           ls
           mkdir -p testingJenkins
