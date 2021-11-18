@@ -15,6 +15,7 @@ pipeline {
           ls
           mkdir -p testingJenkins
           ls
+          'env | sort'
         '''
       }
     }
