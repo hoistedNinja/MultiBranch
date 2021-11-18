@@ -11,15 +11,31 @@ pipeline {
     disableConcurrentBuilds()
   }
   stages{
-    stage('Hello'){
+    stage('Stage 1'){
       steps {
-        echo "hello"
+        echo "stage 1"
         sh '''
           pwd
           ls
           mkdir -p testingJenkins
           ls
           echo $AAA_TOP_LEVEL_VAR
+          env | sort
+        '''
+      }
+      stage('Stage 2'){
+        environment {
+          AAA_STAGE_LEVEL_VAR= ' stage level env variable'
+        }
+      steps {
+        echo "stage 2"
+        sh '''
+          pwd
+          ls
+          mkdir -p testingJenkins
+          ls
+          echo $AAA_TOP_LEVEL_VAR
+          echo $AAA_STAGE_LEVEL_VAR
           env | sort
         '''
       }
