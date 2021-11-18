@@ -19,6 +19,7 @@ pipeline {
           ls
           mkdir -p testingJenkins
           ls
+          echo $AAA_TOP_LEVEL_VAR
           env | sort
         '''
       }
